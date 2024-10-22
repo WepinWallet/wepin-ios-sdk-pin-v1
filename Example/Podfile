@@ -1,0 +1,9 @@
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'WepinPin_Example' do
+  pod 'WepinPin', :path => '../'
+  pod 'WepinLogin'
+#  pod 'WepinLogin', :path => '../'
+end
