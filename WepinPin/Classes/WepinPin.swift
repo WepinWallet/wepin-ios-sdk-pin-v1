@@ -28,13 +28,13 @@ public class WepinPin {
 
     public init(_ params: WepinPinParams) {
         initParams = params
-        StorageManager.shared.initManager(appId: initParams.appId)
         wepinNetwork = WepinNework(appKey: initParams.appKey, sdkVersion: PodVersion)
     }
 
     public func initialize(attributes: WepinPinAttributes) async throws -> Bool {
         if initialized { throw WepinPinError.alreadyInitialized }
         self.attributes = attributes
+        StorageManager.shared.initManager(appId: initParams.appId)
         do {
             _ = try await wepinNetwork?.getAppInfo()
             try await checkLoginSession()

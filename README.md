@@ -24,6 +24,24 @@ After signing up for [Wepin Workspace](https://workspace.wepin.io/), go to the d
 
 ## ⏩ Installation
 
+> ⚠️ Important Notice for v1.0.0 Update
+>
+> 🚨 Breaking Changes & Migration Guide 🚨
+>
+> This update includes major changes that may impact your app. Please read the following carefully before updating.
+>
+> 🔄 Storage Migration
+> •    In rare cases, stored data may become inaccessible due to key changes.
+> •    Starting from v1.0.0, if the key is invalid, stored data will be cleared, and a new key will be generated automatically.
+> •    Existing data will remain accessible unless a key issue is detected, in which case a reset will occur.
+> •    ⚠️ Downgrading to an older version after updating to v1.0.0 may prevent access to previously stored data.
+> •    Recommended: Backup your data before updating to avoid any potential issues.
+>
+> 📦 Compatibility with WepinLogin
+> •    If you are using this module alongside WepinLogin, please ensure that you are also using `WepinLogin` v1.0.0 or higher.
+> •    Mixing different major versions of Wepin modules may result in compatibility issues, unexpected errors, or inconsistent behavior.
+> •    For a stable integration, always use v1.0.0+ across all Wepin modules together.
+
 WepinPin is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
@@ -45,7 +63,7 @@ let appKey: String = "Wepin-App-Key"
 let appId: String = "Wepin-App-ID"
 var wepinPin: WepinPin? = nil
 let initParam = WepinPinParams(appId: appId, appKey: appKey)
-wepin = WepinPin(initParam)
+wepinPin = WepinPin(initParam)
 
   ```
 
