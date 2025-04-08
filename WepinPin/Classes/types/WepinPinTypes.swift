@@ -1,11 +1,35 @@
-import Foundation
+//
+//  WepinPinTypes.swift
+//  Pods
+//
+//  Created by iotrust on 3/20/25.
+//
+import WepinCommon
+@_exported import WepinLogin
 
-// EncUVD 구조체
+public struct WepinPinParams {
+    public var appId: String
+    public var appKey: String
+    
+    public init(appId: String, appKey: String) {
+        self.appId = appId
+        self.appKey = appKey
+    }
+}
+
+extension WepinAttribute {
+    public init(language: String) {
+        self.init(defaultLanguage: language)
+    }
+}
+
+public typealias WepinPinAttributes = WepinAttribute
+
 public struct EncUVD: Codable {
     public let seqNum: Int?
     public let b64SKey: String
     public let b64Data: String
-
+    
     public static func fromJson(_ json: [String: Any]) throws -> EncUVD {
         guard let b64SKey = json["b64SKey"] as? String,
               let b64Data = json["b64Data"] as? String else {
@@ -14,7 +38,7 @@ public struct EncUVD: Codable {
         let seqNum = json["seqNum"] as? Int
         return EncUVD(seqNum: seqNum, b64SKey: b64SKey, b64Data: b64Data)
     }
-
+    
     public func toJson() -> [String: Any] {
         return [
             "seqNum": seqNum as Any,
@@ -24,12 +48,11 @@ public struct EncUVD: Codable {
     }
 }
 
-// EncPinHint 구조체
 public struct EncPinHint: Codable {
     public let version: Int
     public let length: String
     public let data: String
-
+    
     public static func fromJson(_ json: [String: Any]) throws -> EncPinHint {
         guard let version = (json["version"] as? NSNumber)?.intValue else {
             throw NSError(domain: "Invalid version", code: 0)
@@ -43,7 +66,7 @@ public struct EncPinHint: Codable {
         
         return EncPinHint(version: version, length: length, data: data)
     }
-
+    
     public func toJson() -> [String: Any] {
         return [
             "version": version,
@@ -53,28 +76,27 @@ public struct EncPinHint: Codable {
     }
 }
 
-// ChangePinBlock 구조체
 public struct ChangePinBlock: Codable {
     public let uvd: EncUVD
     public let newUVD: EncUVD
     public let hint: EncPinHint
     public let otp: String?
-
+    
     public static func fromJson(_ json: [String: Any]) throws -> ChangePinBlock {
         guard let uvdJson = json["UVD"] as? [String: Any],
               let newUVDJson = json["newUVD"] as? [String: Any],
               let hintJson = json["hint"] as? [String: Any] else {
-            throw NSError(domain: "Invalid JSON structure", code: 0)
+            throw NSError(domain: "Invalid JSON Structure", code: 0)
         }
         
         let uvd = try EncUVD.fromJson(uvdJson)
         let newUVD = try EncUVD.fromJson(newUVDJson)
         let hint = try EncPinHint.fromJson(hintJson)
         let otp = json["otp"] as? String
-
+        
         return ChangePinBlock(uvd: uvd, newUVD: newUVD, hint: hint, otp: otp)
     }
-
+    
     public func toJson() -> [String: Any] {
         return [
             "UVD": uvd.toJson(),
@@ -85,23 +107,22 @@ public struct ChangePinBlock: Codable {
     }
 }
 
-// RegistrationPinBlock 구조체
 public struct RegistrationPinBlock: Codable {
     public let uvd: EncUVD
     public let hint: EncPinHint
-
+    
     public static func fromJson(_ json: [String: Any]) throws -> RegistrationPinBlock {
         guard let uvdJson = json["UVD"] as? [String: Any],
               let hintJson = json["hint"] as? [String: Any] else {
             throw NSError(domain: "Invalid JSON structure", code: 0)
         }
-
+        
         let uvd = try EncUVD.fromJson(uvdJson)
         let hint = try EncPinHint.fromJson(hintJson)
-
+        
         return RegistrationPinBlock(uvd: uvd, hint: hint)
     }
-
+    
     public func toJson() -> [String: Any] {
         return [
             "UVD": uvd.toJson(),
@@ -110,17 +131,17 @@ public struct RegistrationPinBlock: Codable {
     }
 }
 
-// AuthOTP 구조체
 public struct AuthOTP: Codable {
     public let code: String
-
+    
     public static func fromJson(_ json: [String: Any]) throws -> AuthOTP {
         guard let code = json["code"] as? String else {
             throw NSError(domain: "Invalid code", code: 0)
         }
+        
         return AuthOTP(code: code)
     }
-
+    
     public func toJson() -> [String: Any] {
         return [
             "code": code
@@ -128,22 +149,21 @@ public struct AuthOTP: Codable {
     }
 }
 
-// AuthPinBlock 구조체
 public struct AuthPinBlock: Codable {
     public let uvdList: [EncUVD]
     public let otp: String?
-
+    
     public static func fromJson(_ json: [String: Any]) throws -> AuthPinBlock {
         guard let uvdListJson = json["UVDs"] as? [[String: Any]] else {
             throw NSError(domain: "Invalid UVDs", code: 0)
         }
-
+        
         let uvdList = try uvdListJson.map { try EncUVD.fromJson($0) }
         let otp = json["otp"] as? String
-
+        
         return AuthPinBlock(uvdList: uvdList, otp: otp)
     }
-
+    
     public func toJson() -> [String: Any] {
         return [
             "UVDs": uvdList.map { $0.toJson() },
@@ -151,4 +171,3 @@ public struct AuthPinBlock: Codable {
         ]
     }
 }
-

@@ -3,7 +3,23 @@ use_frameworks!
 platform :ios, '13.0'
 
 target 'WepinPin_Example' do
+  # pod 'WepinCommon', :path => '../../WepinCommon'
+  # pod 'WepinStorage', :path => '../../WepinStorage'
+  # pod 'WepinNetwork', :path => '../../WepinNetwork'
+  # pod 'WepinSession', :path => '../../WepinSession'
+  # pod 'WepinModal', :path => '../../WepinModal'
+  # pod 'WepinLogin', :path => '../../WepinLogin'
+  pod 'WepinCommon', '~> 1.1.0'
+  pod 'WepinStorage','~> 1.1.0'
+  pod 'WepinNetwork','~> 1.1.0'
+  pod 'WepinSession', '~> 1.1.0'
+  pod 'WepinModal', '~> 1.1.0'
+  pod 'WepinLogin', '~> 1.1.0'
   pod 'WepinPin', :path => '../'
-  pod 'WepinLogin'
-#  pod 'WepinLogin', :path => '../'
+
+  target 'WepinPin_Tests' do
+    inherit! :search_paths
+
+    
+  end
 end

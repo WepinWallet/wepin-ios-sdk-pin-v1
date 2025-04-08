@@ -42,6 +42,12 @@ After signing up for [Wepin Workspace](https://workspace.wepin.io/), go to the d
 > •    Mixing different major versions of Wepin modules may result in compatibility issues, unexpected errors, or inconsistent behavior.
 > •    For a stable integration, always use v1.0.0+ across all Wepin modules together.
 
+>🆕 What's New in v1.1.0
+> ✅ WepinPin now includes WepinLogin by default. • Starting from v1.1.0, the WepinLogin module is bundled within WepinPin.
+> • You no longer need to install or manage WepinLogin separately when using WepinPin.
+> • This simplifies integration and reduces dependency management for login-related features. • For consistent behavior, please ensure all Wepin modules used are updated to v1.1.0 or higher.
+
+
 WepinPin is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
@@ -136,7 +142,14 @@ Generates a pin block for registration.
 This method should only be used when the loginStatus is pinRequired.
 
 #### Parameters
- - void
+ - `viewController` \<UIViewController> __optional__ - The view controller from which the login widget (WebView) will be presented modally. It provides the display context to ensure the widget appears on the correct screen.
+
+> [!NOTE]
+> You may optionally provide a UIViewController as a parameter.
+> If provided, the WebView will be presented using the given controller.
+> If omitted, the SDK will automatically attempt to find the top-most UIViewController on the main thread.
+> 
+> In some cases (e.g., during modal presentation or custom containers), automatic detection of the top view controller may fail. It is recommended to explicitly pass a UIViewController when possible.
    
 #### Returns
  - \<RegistrationPinBlock>
@@ -170,6 +183,14 @@ Generates a pin block for authentication.
 
 #### Parameters
   - `count` \<Int> - __optional__ If multiple PIN blocks are needed, please enter the number to generate. If the count value is not provided, it will default to 1.
+  - `viewController` \<UIViewController> __optional__ - The view controller from which the login widget (WebView) will be presented modally. It provides the display context to ensure the widget appears on the correct screen.
+
+> [!NOTE]
+> You may optionally provide a UIViewController as a parameter.
+> If provided, the WebView will be presented using the given controller.
+> If omitted, the SDK will automatically attempt to find the top-most UIViewController on the main thread.
+> 
+> In some cases (e.g., during modal presentation or custom containers), automatic detection of the top view controller may fail. It is recommended to explicitly pass a UIViewController when possible.
    
 #### Returns
  - \<AuthPinBlock>
@@ -198,7 +219,14 @@ await wepinPin!.generateChangePINBlock()
 Generate pin block for changing the PIN.
 
 #### Parameters
- - \<Void>
+ - `viewController` \<UIViewController> __optional__ - The view controller from which the login widget (WebView) will be presented modally. It provides the display context to ensure the widget appears on the correct screen.
+
+> [!NOTE]
+> You may optionally provide a UIViewController as a parameter.
+> If provided, the WebView will be presented using the given controller.
+> If omitted, the SDK will automatically attempt to find the top-most UIViewController on the main thread.
+> 
+> In some cases (e.g., during modal presentation or custom containers), automatic detection of the top view controller may fail. It is recommended to explicitly pass a UIViewController when possible.
    
 #### Returns
  - \<ChangePinBlock>
@@ -235,7 +263,14 @@ await wepinPin!.generateAuthOTPCode()
 generate OTP.
 
 #### Parameters
- - void
+ - `viewController` \<UIViewController> __optional__ - The view controller from which the login widget (WebView) will be presented modally. It provides the display context to ensure the widget appears on the correct screen.
+
+> [!NOTE]
+> You may optionally provide a UIViewController as a parameter.
+> If provided, the WebView will be presented using the given controller.
+> If omitted, the SDK will automatically attempt to find the top-most UIViewController on the main thread.
+> 
+> In some cases (e.g., during modal presentation or custom containers), automatic detection of the top view controller may fail. It is recommended to explicitly pass a UIViewController when possible.
    
 #### Returns
  - \<AuthOTP>

@@ -1,40 +1,70 @@
 PODS:
-  - AppAuth (1.7.5):
-    - AppAuth/Core (= 1.7.5)
-    - AppAuth/ExternalUserAgent (= 1.7.5)
-  - AppAuth/Core (1.7.5)
-  - AppAuth/ExternalUserAgent (1.7.5):
+  - AppAuth (1.7.6):
+    - AppAuth/Core (= 1.7.6)
+    - AppAuth/ExternalUserAgent (= 1.7.6)
+  - AppAuth/Core (1.7.6)
+  - AppAuth/ExternalUserAgent (1.7.6):
     - AppAuth/Core
   - BCrypt (1.0.0)
-  - secp256k1.swift (0.1.4)
-  - WepinLogin (0.0.4):
+  - WepinCommon (1.1.0)
+  - WepinLogin (1.1.0):
     - AppAuth (~> 1.7.5)
     - BCrypt (~> 1.0.0)
-    - secp256k1.swift (~> 0.1.0)
-  - WepinPin (0.0.1)
+    - WepinCommon (~> 1.1.0)
+    - WepinNetwork (~> 1.1.0)
+    - WepinSession (~> 1.1.0)
+    - WepinStorage (~> 1.1.0)
+  - WepinModal (1.1.0)
+  - WepinNetwork (1.1.0):
+    - WepinCommon (~> 1.1.0)
+  - WepinPin (1.1.0):
+    - WepinCommon (~> 1.1.0)
+    - WepinLogin (~> 1.1.0)
+    - WepinModal (~> 1.1.0)
+    - WepinNetwork (~> 1.1.0)
+    - WepinSession (~> 1.1.0)
+    - WepinStorage (~> 1.1.0)
+  - WepinSession (1.1.0):
+    - WepinCommon (~> 1.1.0)
+    - WepinNetwork (~> 1.1.0)
+    - WepinStorage (~> 1.1.0)
+  - WepinStorage (1.1.0)
 
 DEPENDENCIES:
-  - WepinLogin
+  - WepinCommon (~> 1.1.0)
+  - WepinLogin (~> 1.1.0)
+  - WepinModal (~> 1.1.0)
+  - WepinNetwork (~> 1.1.0)
   - WepinPin (from `../`)
+  - WepinSession (~> 1.1.0)
+  - WepinStorage (~> 1.1.0)
 
 SPEC REPOS:
   trunk:
     - AppAuth
     - BCrypt
-    - secp256k1.swift
+    - WepinCommon
     - WepinLogin
+    - WepinModal
+    - WepinNetwork
+    - WepinSession
+    - WepinStorage
 
 EXTERNAL SOURCES:
   WepinPin:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AppAuth: 501c04eda8a8d11f179dbe8637b7a91bb7e5d2fa
+  AppAuth: d4f13a8fe0baf391b2108511793e4b479691fb73
   BCrypt: 712b656110e5020d319c547e4d8f3053ded82b2a
-  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
-  WepinLogin: 9696e9cf833e08dd69822d410fbefec1903e32df
-  WepinPin: 6e0ae906d49537d94ca98db23add671b5f42296c
+  WepinCommon: e3bd32b4e71852270ee790a903cb484832755bd0
+  WepinLogin: d6c259a8435384bb1d4cf30afc1b392568fc33e5
+  WepinModal: a2ed5b99e1a2eb9220ded168b35bb581363febf6
+  WepinNetwork: 3bed791937b78001a88dce2c8fa46e4786319824
+  WepinPin: 37a1ccb6a223d003329311d47d6d5cc59c4d3f8a
+  WepinSession: 2b11a679d2c1a8c564d9a14a7b00f4788d478007
+  WepinStorage: 9c01d74c7cfe3ab8a6a0541d5d73db87fd7b8883
 
-PODFILE CHECKSUM: 40f4584a13c062c8d72323f6c0a08a1b56763a64
+PODFILE CHECKSUM: 5ceae2d84d0e5239a0cc274a696ba32da5c4afc1
 
 COCOAPODS: 1.15.2

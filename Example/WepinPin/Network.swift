@@ -90,7 +90,7 @@ struct IAppAccount: Codable {
     let network: String
     let balance: String
     let decimals: Int
-    let iconUrl: String
+    let iconUrl: String?
     let ids: String?
     let accountTokenId: String?
     let cmkId: Int?

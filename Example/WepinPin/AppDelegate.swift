@@ -1,8 +1,9 @@
 //
 //  AppDelegate.swift
+//  WepinPin
 //
-//  Created by iotrust on 06/12/2024.
-//  Copyright (c) 2024 iotrust. All rights reserved.
+//  Created by JisunHong1 on 03/20/2025.
+//  Copyright (c) 2025 JisunHong1. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
@@ -24,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        print("======================")
-        print("applicationDidEnterBackground")
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }

@@ -8,14 +8,19 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WepinPin'
-  s.version          = '1.0.0'
-  s.summary          = 'Wepin iOS SDK PIN Pad Library'
+  s.version          = '1.1.0'
+  s.summary          = 'A short description of WepinPin.'
+  s.swift_version    = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
+
+  s.description      = <<-DESC
+TODO: Add long description of the pod here.
+                       DESC
 
   s.homepage         = 'https://github.com/WepinWallet/wepin-ios-sdk-pin-v1'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -27,7 +32,20 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'WepinPin/Classes/**/*'
-  
-  s.swift_version = '5.0'
 
+  s.module_name = 'WepinPin'
+  
+  # s.resource_bundles = {
+  #   'WepinPin' => ['WepinPin/Assets/*.png']
+  # }
+
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
+  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'WepinCommon', '~> 1.1.0'
+  s.dependency 'WepinStorage', '~> 1.1.0'
+  s.dependency 'WepinNetwork', '~> 1.1.0'
+  s.dependency 'WepinSession', '~> 1.1.0'
+  s.dependency 'WepinModal', '~> 1.1.0'
+  s.dependency 'WepinLogin', '~> 1.1.0'
 end

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
+   LastUpgradeVersion = "0900"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "WepinLogin_Example.app"
-               BlueprintName = "WepinLogin_Example"
-               ReferencedContainer = "container:WepinLogin.xcodeproj">
+               BuildableName = "WepinPin_Example.app"
+               BlueprintName = "WepinPin_Example"
+               ReferencedContainer = "container:WepinPin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "WepinLogin_Tests.xctest"
-               BlueprintName = "WepinLogin_Tests"
-               ReferencedContainer = "container:WepinLogin.xcodeproj">
+               BuildableName = "WepinPin_Tests.xctest"
+               BlueprintName = "WepinPin_Tests"
+               ReferencedContainer = "container:WepinPin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,33 +40,37 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "WepinLogin_Example.app"
-            BlueprintName = "WepinLogin_Example"
-            ReferencedContainer = "container:WepinLogin.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "WepinLogin_Tests.xctest"
-               BlueprintName = "WepinLogin_Tests"
-               ReferencedContainer = "container:WepinLogin.xcodeproj">
+               BuildableName = "WepinPin_Tests.xctest"
+               BlueprintName = "WepinPin_Tests"
+               ReferencedContainer = "container:WepinPin.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "WepinPin_Example.app"
+            BlueprintName = "WepinPin_Example"
+            ReferencedContainer = "container:WepinPin.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -78,11 +82,13 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "WepinLogin_Example.app"
-            BlueprintName = "WepinLogin_Example"
-            ReferencedContainer = "container:WepinLogin.xcodeproj">
+            BuildableName = "WepinPin_Example.app"
+            BlueprintName = "WepinPin_Example"
+            ReferencedContainer = "container:WepinPin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -95,9 +101,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "WepinLogin_Example.app"
-            BlueprintName = "WepinLogin_Example"
-            ReferencedContainer = "container:WepinLogin.xcodeproj">
+            BuildableName = "WepinPin_Example.app"
+            BlueprintName = "WepinPin_Example"
+            ReferencedContainer = "container:WepinPin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
