@@ -9,13 +9,14 @@ target 'WepinPin_Example' do
   # pod 'WepinSession', :path => '../../WepinSession'
   # pod 'WepinModal', :path => '../../WepinModal'
   # pod 'WepinLogin', :path => '../../WepinLogin'
+  # pod 'WepinPin', :path => '../'
   pod 'WepinCommon', '~> 1.1.0'
   pod 'WepinStorage','~> 1.1.0'
   pod 'WepinNetwork','~> 1.1.0'
   pod 'WepinSession', '~> 1.1.0'
   pod 'WepinModal', '~> 1.1.0'
   pod 'WepinLogin', '~> 1.1.0'
-  pod 'WepinPin', :path => '../'
+  pod 'WepinPin', '~> 1.1.0'
 
   target 'WepinPin_Tests' do
     inherit! :search_paths

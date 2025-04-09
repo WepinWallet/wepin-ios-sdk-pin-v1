@@ -35,7 +35,7 @@ DEPENDENCIES:
   - WepinLogin (~> 1.1.0)
   - WepinModal (~> 1.1.0)
   - WepinNetwork (~> 1.1.0)
-  - WepinPin (from `../`)
+  - WepinPin (~> 1.1.0)
   - WepinSession (~> 1.1.0)
   - WepinStorage (~> 1.1.0)
 
@@ -47,12 +47,9 @@ SPEC REPOS:
     - WepinLogin
     - WepinModal
     - WepinNetwork
+    - WepinPin
     - WepinSession
     - WepinStorage
-
-EXTERNAL SOURCES:
-  WepinPin:
-    :path: "../"
 
 SPEC CHECKSUMS:
   AppAuth: d4f13a8fe0baf391b2108511793e4b479691fb73
@@ -65,6 +62,6 @@ SPEC CHECKSUMS:
   WepinSession: 2b11a679d2c1a8c564d9a14a7b00f4788d478007
   WepinStorage: 9c01d74c7cfe3ab8a6a0541d5d73db87fd7b8883
 
-PODFILE CHECKSUM: 5ceae2d84d0e5239a0cc274a696ba32da5c4afc1
+PODFILE CHECKSUM: 75ea073e178da347dc43fdb3637714aab27c899b
 
 COCOAPODS: 1.15.2
