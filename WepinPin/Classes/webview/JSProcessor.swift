@@ -2,7 +2,7 @@ import Foundation
 import WepinLogin
 import WebKit
 import WepinCommon
-import WepinStorage
+import WepinCore
 
 struct Command {
     static let CMD_READY_TO_WIDGET = "ready_to_widget"
@@ -78,7 +78,7 @@ class JSProcessor {
                 let type = WepinPinManager.shared.sdkType
                 let version = WepinPinManager.shared.version
                 let attributes = WepinPinManager.shared.wepinAttributes
-                let storageData = WepinStorage.shared.getAllStorage()
+                let storageData = WepinCore.shared.storage.getAllStorage()
                 jsResponse = JSResponse.Builder(
                     id: "\(id)",
                     requestFrom: requestFrom,
@@ -146,7 +146,7 @@ class JSProcessor {
                         storageDataMap[key] = storageValue
                     }
 
-                    WepinStorage.shared.setAllStorage(data: storageDataMap)
+                    WepinCore.shared.storage.setAllStorage(data: storageDataMap)
                     if storageDataMap["user_info"] != nil {
                         WepinPinManager.shared.wepinWebViewManager?.completeResponseWepinUserDeferred(success: true)
                     }

@@ -2,9 +2,7 @@ import Foundation
 import WepinCommon
 import WepinModal
 import WepinLogin
-import WepinSession
-import WepinNetwork
-import WepinStorage
+import WepinCore
 
 public class WepinPin {
     private var initialized: Bool = false
@@ -31,14 +29,10 @@ public class WepinPin {
         
         try await wepinPinManager.initialize(params: wepinPinParams, attributes: attributes, platformType: platformType)
         
-        do {
-            _ = try await WepinNetwork.shared.getAppInfo()
-            initialized = true
-        } catch {
-            throw error
-        }
+        initialized = true
+        
 
-        _ = await WepinSessionManager.shared.checkLoginStatusAndGetLifeCycle()
+        _ = await WepinCore.shared.session.checkLoginStatusAndGetLifeCycle()
         return initialized
     }
     
@@ -66,7 +60,13 @@ public class WepinPin {
     }
     
     public func generateAuthPINBlock(count: Int?, viewController: UIViewController? = nil) async throws -> AuthPinBlock? {
-        let actualCnt = count ?? 1
+//        let actualCnt = count ?? 1
+        let actualCnt: Int
+        if let count = count, count > 0 {
+            actualCnt = count        // 첫 번째 할당 (초기화)
+        } else {
+            actualCnt = 1           // 첫 번째 할당 (초기화)
+        }
         let param: [String: Int?] = ["count": actualCnt]
         return try await executePinCommand(command: Command.CMD_SUB_PIN_AUTH, parameter: param, viewController: viewController, parseResult: { resultDict in
             try AuthPinBlock.fromJson(resultDict)
@@ -87,7 +87,7 @@ public class WepinPin {
     
     private func executePinCommand<T>(command: String, parameter: Any?, viewController: UIViewController?, parseResult: ([String: Any]) throws -> T?) async throws -> T? {
         guard initialized else { throw WepinError.notInitialized }
-        let lifeCycle = await WepinSessionManager.shared.checkLoginStatusAndGetLifeCycle()
+        let lifeCycle = await WepinCore.shared.session.checkLoginStatusAndGetLifeCycle()
         if (lifeCycle == .login || lifeCycle == .loginBeforeRegister) {
             guard let tobViewController = viewController ?? getTopViewController() else {
                 throw WepinError.unknown("UIViewController not found")

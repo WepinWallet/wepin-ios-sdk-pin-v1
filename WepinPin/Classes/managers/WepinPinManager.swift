@@ -2,9 +2,7 @@ import Foundation
 import WepinCommon
 import WepinModal
 import WepinLogin
-import WepinSession
-import WepinNetwork
-import WepinStorage
+import WepinCore
 
 public class WepinPinManager {
     // MARK: - Singleton
@@ -42,9 +40,8 @@ public class WepinPinManager {
         
         wepinAttributes = WepinAttributeWithProviders(defaultLanguage: attributes.defaultLanguage, defaultCurrency: attributes.defaultCurrency)
         
-        try WepinNetwork.shared.initialize(appKey: appKey, domain: domain, sdkType: sdkType, version: version)
+        try await WepinCore.shared.initialize(appId: appId, appKey: appKey, domain: domain, sdkType: sdkType, version: version)
         wepinWebViewManager = WepinWebViewManager(params: params, baseUrl: url)
-        WepinSessionManager.shared.initialize(appId: appId, sdkType: platformType ?? "ios")
         
         let wepinLoginParams = WepinLoginParams(appId: appId, appKey: appKey)
         wepinLoginLib = WepinLogin(wepinLoginParams)
@@ -53,10 +50,8 @@ public class WepinPinManager {
     
     func finalize() {
         wepinLoginLib?.finalize()
-//        wepinNetwork = nil
-        WepinNetwork.shared.finalize()
+        WepinCore.shared.finalize()
         wepinWebViewManager = nil
-        WepinSessionManager.shared.finalize()
         wepinAttributes = nil
         loginProviderInfos.removeAll()
         currentWepinRequest = nil

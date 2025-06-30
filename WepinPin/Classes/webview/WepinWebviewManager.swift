@@ -1,7 +1,6 @@
 import Foundation
 import UIKit
 import WebKit
-import WepinNetwork
 import WepinModal
 import WepinCommon
 

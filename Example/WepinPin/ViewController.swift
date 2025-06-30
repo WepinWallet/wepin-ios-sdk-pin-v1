@@ -655,7 +655,7 @@ class ViewController: UIViewController {
             do {
                 let wepinUser = try await login.getCurrentWepinUser()
                 
-                let otp = pinBlock.otp
+                _ = pinBlock.otp
                 let uvdList = pinBlock.uvdList
                 
                 network.setAuthToken(accessToken: wepinUser.token!.access, refreshToken: wepinUser.token!.refresh)

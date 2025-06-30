@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01BCDCF53939D8AB84E4F226 /* Pods_WepinPin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6CB9C3B4E8AD4203224E16 /* Pods_WepinPin_Tests.framework */; };
+		37CD6D99BD302EB5714EB2F9 /* Pods_WepinPin_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC0114F091C72E4716CECB0 /* Pods_WepinPin_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -37,10 +39,16 @@
 		607FACE51AFB9204008FA782 /* WepinPin_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WepinPin_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		6A3FB6EE66353648DE49766C /* Pods-WepinPin_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WepinPin_Example.release.xcconfig"; path = "Target Support Files/Pods-WepinPin_Example/Pods-WepinPin_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7BC0114F091C72E4716CECB0 /* Pods_WepinPin_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WepinPin_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		984632E943A216907C9372F3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ACCF2FF32D93F46300F3E9BD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = WepinPin/Network.swift; sourceTree = SOURCE_ROOT; };
+		BCCA08FFE6D60E013AA2AA9E /* Pods-WepinPin_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WepinPin_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WepinPin_Tests/Pods-WepinPin_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0ADFE20C6F0E1F3971F4DD5 /* WepinPin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WepinPin.podspec; path = ../WepinPin.podspec; sourceTree = "<group>"; };
 		CBCC7B570BDAE7BA5D654F5D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D661740E6081F49487E1316E /* Pods-WepinPin_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WepinPin_Tests.release.xcconfig"; path = "Target Support Files/Pods-WepinPin_Tests/Pods-WepinPin_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		DB6CB9C3B4E8AD4203224E16 /* Pods_WepinPin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WepinPin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECD016AE2F221E65AA3918E9 /* Pods-WepinPin_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WepinPin_Example.debug.xcconfig"; path = "Target Support Files/Pods-WepinPin_Example/Pods-WepinPin_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37CD6D99BD302EB5714EB2F9 /* Pods_WepinPin_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,15 +64,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BCDCF53939D8AB84E4F226 /* Pods_WepinPin_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A05CF4AD0BC2D196D5D3360 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BC0114F091C72E4716CECB0 /* Pods_WepinPin_Example.framework */,
+				DB6CB9C3B4E8AD4203224E16 /* Pods_WepinPin_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3B0FE37E3D911B4EC3FCC1B1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				ECD016AE2F221E65AA3918E9 /* Pods-WepinPin_Example.debug.xcconfig */,
+				6A3FB6EE66353648DE49766C /* Pods-WepinPin_Example.release.xcconfig */,
+				BCCA08FFE6D60E013AA2AA9E /* Pods-WepinPin_Tests.debug.xcconfig */,
+				D661740E6081F49487E1316E /* Pods-WepinPin_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -76,6 +99,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				3B0FE37E3D911B4EC3FCC1B1 /* Pods */,
+				2A05CF4AD0BC2D196D5D3360 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WepinPin_Example" */;
 			buildPhases = (
+				FF3F0EB3C81D9279D0C4460E /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				51F47944A6A7CF16545D261C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WepinPin_Tests" */;
 			buildPhases = (
+				F67F9722A1BCADB4CFD6FCB6 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -238,6 +265,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51F47944A6A7CF16545D261C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WepinPin_Example/Pods-WepinPin_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/BCrypt/BCrypt.framework",
+				"${BUILT_PRODUCTS_DIR}/WepinCommon/WepinCommon.framework",
+				"${BUILT_PRODUCTS_DIR}/WepinCore/WepinCore.framework",
+				"${BUILT_PRODUCTS_DIR}/WepinLogin/WepinLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/WepinModal/WepinModal.framework",
+				"${BUILT_PRODUCTS_DIR}/WepinPin/WepinPin.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BCrypt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WepinCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WepinCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WepinLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WepinModal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WepinPin.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WepinPin_Example/Pods-WepinPin_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F67F9722A1BCADB4CFD6FCB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WepinPin_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF3F0EB3C81D9279D0C4460E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WepinPin_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		607FACCC1AFB9204008FA782 /* Sources */ = {
@@ -389,6 +493,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECD016AE2F221E65AA3918E9 /* Pods-WepinPin_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6626Z492H;
@@ -404,6 +509,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3FB6EE66353648DE49766C /* Pods-WepinPin_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6626Z492H;
@@ -419,6 +525,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCCA08FFE6D60E013AA2AA9E /* Pods-WepinPin_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = B6626Z492H;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -441,6 +548,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D661740E6081F49487E1316E /* Pods-WepinPin_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = B6626Z492H;
 				FRAMEWORK_SEARCH_PATHS = (
